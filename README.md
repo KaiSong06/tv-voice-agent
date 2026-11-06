@@ -1,3 +1,11 @@
+# Samsung TV voice adaptation
+
+This fork adds a local voice-and-vision TV agent in **[tv-agent/](tv-agent/README.md)**.
+It uses local Whisper, Gemini Flash-Lite, and an existing Samsung capture/control adapter.
+See that directory for setup, execution commands, validation status, and limitations.
+
+The original Pipecat Examples documentation follows.
+
 <h1><div align="center">
  <img alt="pipecat" width="300px" height="auto" src="https://raw.githubusercontent.com/pipecat-ai/pipecat-examples/main/pipecat-examples.png">
 </div></h1>

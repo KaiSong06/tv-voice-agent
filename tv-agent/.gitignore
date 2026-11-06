@@ -1,0 +1,6 @@
+!uv.lock
+.env*
+!env.example
+.runtime/
+*.wav
+*.png

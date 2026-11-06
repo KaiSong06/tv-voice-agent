@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tv-voice-agent"
+version = "0.1.0"
+description = "Local push-to-talk Pipecat agent for a Samsung TV"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "pipecat-ai[whisper]==1.15.0",
+  "mlx-whisper==0.4.3; sys_platform == 'darwin' and platform_machine == 'arm64'",
+  "google-genai==3.0.0",
+  "sounddevice==0.5.6",
+]
+
+[project.scripts]
+tv-voice = "tv_voice.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=1,<2", "ruff>=0.12,<1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["tv_voice"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
